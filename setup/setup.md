@@ -1,5 +1,7 @@
 # 🛠️ Setup Instructions for `django`
 
+## pip3 or pip && python3 or python can use both
+
 ## if no lib
 ```bash
 pip install virtualenv
