@@ -1,54 +1,72 @@
-# 🛠️ Setup Instructions for `django-week3`
+# 🛠️ Setup Instructions for `django`
 
-## 📦 Requirements
-
-- Python 3.x
-- pip (Python package manager)
-- Git (to clone this repo)
-
-## 🔽 1. Clone the repository
-
+## if no lib
 ```bash
-git clone https://github.com/it-web-pro/django-week3.git
-cd django-week3
+pip install virtualenv
 ```
 
-## 🧪 2. Create and activate virtual environment
+## 🧪 Create and activate virtual environment
 
 **(Windows)**
 
 ```bash
-python -m venv env
+python -m venv .venv
 env\Scripts\activate
 ```
 
-**(macOS/Linux)**
+## 📥 Install required packages
 
 ```bash
-python3 -m venv env
-source env/bin/activate
+pip install django psycopg2
+OR
+pip install psycopg2-binary
 ```
 
-## 📥 3. Install required packages
+## setup project
 
 ```bash
-pip install -r requirements.txt
+#create project
+django-admin startproject [name]
+#create app
+python manage.py startapp [name]
 ```
 
-## ⚙️ 4. Run migrations
+## setup database and app in file setting
+
+```bash
+# Database setting
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "appname",
+        "USER": "postgres",
+        "PASSWORD": "password",
+        "HOST": "localhost",
+        "PORT": "5432",
+    }
+}
+
+# Add app to INSTALLED_APPS
+INSTALLED_APPS = [
+    "django.contrib.admin",
+    "django.contrib.auth",
+    "django.contrib.contenttypes",
+    "django.contrib.sessions",
+    "django.contrib.messages",
+    "django.contrib.staticfiles",
+    # Add your apps here
+    "name",
+]
+```
+
+## ⚙️ Run migrations
 
 ```bash
 python manage.py makemigrations
 python manage.py migrate
 ```
 
-## 👤 5. Create superuser (optional but useful)
-
-```bash
-python manage.py createsuperuser
-```
-
-## 🚀 6. Run the development server
+## 🚀 Run the development server
 
 ```bash
 python manage.py runserver
@@ -57,15 +75,3 @@ python manage.py runserver
 Then go to `http://127.0.0.1:8000` in your browser.
 
 ---
-
-## 🧪 Admin login
-
-Visit: [http://127.0.0.1:8000/admin](http://127.0.0.1:8000/admin)  
-Use the credentials from the `createsuperuser` step.
-
----
-
-## 📝 Notes
-
-- If `python` doesn’t work, try `python3`
-- If `pip` doesn’t work, try `pip3`
