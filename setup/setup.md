@@ -11,7 +11,7 @@ pip install virtualenv
 
 ```bash
 python -m venv .venv
-env\Scripts\activate
+.venv\Scripts\activate
 ```
 
 ## 📥 Install required packages
