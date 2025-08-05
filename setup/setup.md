@@ -17,9 +17,7 @@ python -m venv .venv
 ## 📥 Install required packages
 
 ```bash
-pip install django psycopg2
-OR
-pip install psycopg2-binary
+pip install django
 ```
 
 ## setup project
@@ -29,6 +27,14 @@ pip install psycopg2-binary
 django-admin startproject [name]
 #create app
 python manage.py startapp [name]
+```
+
+## install psycop2 after startproject
+
+```bash
+pip install psycopg2
+OR
+pip install psycopg2-binary
 ```
 
 ## setup database and app in file setting
